@@ -160,6 +160,41 @@ line-height:1.8;
 margin-top:20px;
 }
 
+/* CLASS BOXES */
+
+.class-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.class-box{
+padding:20px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.catcher{background:#1a222c;}
+.mimic{background:#1f3d2b;}
+.phantom{background:#1f2f4d;}
+.bomber{background:#4d1f1f;}
+
+.perk-box{
+background:#1a222c;
+padding:20px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.perk-box h4{
+margin:0;
+margin-bottom:5px;
+color:#00ffa6;
+}
+
+/* CODE */
+
 .guide code{
 display:block;
 background:#0a0f14;
@@ -338,7 +373,6 @@ Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring c
 <!-- ROADMAP -->
 
 <section id="roadmap" class="section">
-
 <h2>Development Roadmap</h2>
 
 <img class="banner"
@@ -355,25 +389,73 @@ src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadm
 <img class="banner"
 src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
 
-<p>
-Players start as humans, with one randomly selected as the initial zombie. Humans must explore the map, loot weapons, and survive long enough to reach and escape on the train.
-</p>
+<h3>Zombie Classes</h3>
 
-<p>
-If a human is killed or infected, they become a zombie and join the infected team. Zombies must hunt down and infect the remaining survivors before they escape.
-</p>
+<div class="class-grid">
 
-<p>
-Humans can earn stars by winning or playing matches. Stars can be used to unlock costumes, and some costumes provide special perks that enhance gameplay.
-</p>
+<div class="class-box catcher">
+Catcher<br>
+Balanced class with strong combat ability.
+</div>
 
-<p>
-Zombies can choose different classes, including:
-<br>• Bomber – explodes to damage humans
-<br>• Catcher – balanced class with strong damage
-<br>• Mimic – disguises itself as a human
-<br>• Phantom – can turn invisible temporarily
-</p>
+<div class="class-box mimic">
+Mimic<br>
+Can disguise as humans to trick survivors.
+</div>
+
+<div class="class-box phantom">
+Phantom<br>
+Can turn invisible temporarily.
+</div>
+
+<div class="class-box bomber">
+Bomber<br>
+Explodes to damage and infect humans.
+</div>
+
+</div>
+
+<h3>Human Perks</h3>
+
+<div class="perk-box">
+<h4>Rebellious (Default)</h4>
+Gain 1 armor point on spawn.
+</div>
+
+<div class="perk-box">
+<h4>Doubtful</h4>
+Carry 3 guns instead of 2. Third gun deals more damage.
+</div>
+
+<div class="perk-box">
+<h4>Lover</h4>
+Gain lifesteal when landing shots on zombies.
+</div>
+
+<div class="perk-box">
+<h4>Safety</h4>
+Spawn with 1 heart and 5 armor. Armor and hearts regenerate.
+</div>
+
+<div class="perk-box">
+<h4>Vanity</h4>
+Triple jump instead of double jump.
+</div>
+
+<div class="perk-box">
+<h4>Leader</h4>
+Faster movement speed and camouflage while crouching/sliding.
+</div>
+
+<div class="perk-box">
+<h4>Hopeful</h4>
+Regenerate health constantly and revive zombies with 2 vaccine shots per round.
+</div>
+
+<div class="perk-box">
+<h4>Event Perks (Secret)</h4>
+Original Doubt and Original Vanity are hidden event perks.
+</div>
 
 </section>
 
@@ -385,33 +467,83 @@ Zombies can choose different classes, including:
 
 <div class="guide">
 
-<h3>Download Server Client</h3>
-
-<a href="https://github.com/Kornflakes1/PandemicExpressRedux/archive/refs/heads/Server.zip"
-class="button secondary"
-target="_blank">
-Download Server Client
-</a>
-
-<h3>Prerequisites</h3>
+<h3>Prerequisites and Information</h3>
 
 <ul>
-<li>NAT Loopback capable router recommended</li>
-<li>Router must support port forwarding</li>
-<li>CGNAT routers cannot host servers</li>
+
+<li><b>NAT Loopback capable router</b>
+<ul>
+<li>Non NAT Loopback routers do work but joining differs.</li>
+<li>If you have CG NAT router you cannot host.</li>
 </ul>
+</li>
+
+<li><b>Router capable of port forwarding</b>
+<ul>
+<li>Some routers require manual internal/external port setup.</li>
+</ul>
+</li>
+
+<li><b>Game Server Client</b></li>
+
+</ul>
+
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux/tree/Server"
+class="button secondary"
+target="_blank">
+Server Client Download
+</a>
+
+<code>
+Example Port Forward
+
+GAME SERVER
+Internal Port: 7777
+External Port: 7777
+
+SERVER ADDR
+Internal Port: 7778
+External Port: 7778
+</code>
 
 <h3>Ports You Must Forward</h3>
 
 <code>
 Game Connection: 2838
-Server Arbitrator: 2840-2843
+Server Arbitrator: 2840, 2841, 2842, 2843
 Voice Chat: 2832
 Sync Server: 2932
+
+Gateway examples:
+192.168.1.1
+192.168.0.1
+192.168.1.254
 </code>
 
-</div>
+<h3>Server Configuration</h3>
 
+<ul>
+<li>Edit dedicated.cfg for server name/password/IP</li>
+<li>Edit serverx.cfg for balancing</li>
+</ul>
+
+<h3>Testing Server</h3>
+
+<ul>
+<li>Launch server</li>
+<li>Check server list</li>
+<li>Connect</li>
+</ul>
+
+<h3>Custom Maps</h3>
+
+<a href="https://github.com/PEPSIKrus/parkour-map/releases"
+class="button secondary"
+target="_blank">
+Download Parkour Map
+</a>
+
+</div>
 </section>
 
 <div class="footer">
