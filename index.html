@@ -24,6 +24,65 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
+/* GLOBAL ANIMATION ADD */
+
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 1s ease forwards;
+}
+
+.fade-in-delay{
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 1.4s ease forwards;
+}
+
+.scale-in{
+opacity:0;
+transform:scale(0.9);
+animation:scaleIn 0.6s ease forwards;
+}
+
+@keyframes fadeInUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes scaleIn{
+from{
+opacity:0;
+transform:scale(0.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes glowPulse{
+0%{box-shadow:0 0 0 rgba(0,255,166,0);}
+50%{box-shadow:0 0 20px rgba(0,255,166,0.5);}
+100%{box-shadow:0 0 0 rgba(0,255,166,0);}
+}
+
 /* NAVBAR */
 
 .navbar{
@@ -38,12 +97,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:999;
-
-/* ADDED ANIMATION */
 animation:slideDown 0.8s ease;
 }
-
-/* LOGO IMAGE ADDED */
 
 .logo{
 font-weight:bold;
@@ -53,19 +108,17 @@ align-items:center;
 gap:10px;
 }
 
-.logo img{
-height:32px;
-width:32px;
-animation:fadeIn 1.2s ease;
-}
+/* ADDED LOGO IMAGE */
 
-/* KEEP TEXT BUT HIDE VISUALLY (NOT REMOVED) */
+.logo img{
+height:36px;
+width:auto;
+animation:scaleIn 1s ease;
+}
 
 .logo span{
 display:none;
 }
-
-/* NAV LINKS */
 
 .nav-links{
 display:flex;
@@ -82,25 +135,9 @@ cursor:pointer;
 position:relative;
 }
 
-/* LINK ANIMATION */
-
-.nav-links a::after{
-content:"";
-position:absolute;
-bottom:-4px;
-left:0;
-width:0%;
-height:2px;
-background:#00ffa6;
-transition:0.3s;
-}
-
-.nav-links a:hover::after{
-width:100%;
-}
-
 .nav-links a:hover{
 color:#00ffa6;
+transform:translateY(-2px);
 }
 
 /* HERO */
@@ -115,23 +152,23 @@ background-position:center;
 display:flex;
 align-items:center;
 padding:0 60px;
-animation:fadeIn 1.5s ease;
+animation:fadeInUp 1.2s ease;
 }
 
 .hero-content{
 max-width:650px;
-animation:fadeUp 1s ease;
+animation:fadeInUp 1.2s ease;
 }
 
 .hero h1{
 font-size:64px;
-animation:fadeUp 1.2s ease;
+animation:fadeInUp 1.4s ease;
 }
 
 .hero p{
 font-size:19px;
 opacity:0.9;
-animation:fadeUp 1.4s ease;
+animation:fadeInUp 1.6s ease;
 }
 
 /* BUTTON */
@@ -146,12 +183,13 @@ font-weight:bold;
 border-radius:8px;
 text-decoration:none;
 transition:0.25s;
-animation:fadeUp 1.6s ease;
+animation:scaleIn 1.2s ease;
 }
 
 .button:hover{
 background:#00cc85;
-transform:scale(1.05);
+transform:scale(1.08);
+animation:glowPulse 1.5s infinite;
 }
 
 .button.secondary{
@@ -168,30 +206,26 @@ background:#2a3440;
 
 .section{
 padding:90px 60px;
-opacity:0;
-transform:translateY(40px);
-transition:all 0.9s ease;
-}
-
-.section.visible{
-opacity:1;
-transform:translateY(0);
+animation:fadeInUp 1.2s ease;
 }
 
 .section h2{
 font-size:38px;
 margin-bottom:15px;
+animation:fadeInUp 1.3s ease;
 }
 
 .section h3{
 margin-top:30px;
 color:#00ffa6;
+animation:fadeInUp 1.4s ease;
 }
 
 .section p, .section li{
 max-width:900px;
 opacity:0.9;
 line-height:1.7;
+animation:fadeInUp 1.5s ease;
 }
 
 /* IMAGE */
@@ -200,8 +234,8 @@ line-height:1.7;
 width:100%;
 border-radius:12px;
 margin-bottom:25px;
-transition:0.5s;
-animation:fadeIn 1.5s ease;
+animation:scaleIn 1s ease;
+transition:0.4s;
 }
 
 .banner:hover{
@@ -216,7 +250,7 @@ padding:30px;
 border-radius:12px;
 line-height:1.8;
 margin-top:20px;
-animation:fadeUp 1.5s ease;
+animation:fadeInUp 1.2s ease;
 }
 
 .guide code{
@@ -227,6 +261,7 @@ border-radius:8px;
 margin-top:10px;
 white-space:pre-wrap;
 color:#00ffa6;
+animation:fadeInUp 1.3s ease;
 }
 
 /* INFO GRID */
@@ -242,8 +277,8 @@ margin-top:20px;
 padding:15px;
 border-radius:10px;
 font-weight:bold;
-transition:0.4s;
-animation:fadeUp 1.5s ease;
+animation:scaleIn 0.8s ease;
+transition:0.3s;
 }
 
 .info-box:hover{
@@ -270,7 +305,7 @@ padding:40px;
 text-align:center;
 background:#070a0f;
 opacity:0.6;
-animation:fadeIn 2s ease;
+animation:fadeInUp 1.5s ease;
 }
 
 /* MODAL */
@@ -324,6 +359,11 @@ padding:10px 20px;
 border:none;
 border-radius:6px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.btn-red:hover{
+transform:scale(1.05);
 }
 
 .btn-green{
@@ -333,46 +373,11 @@ padding:10px 20px;
 border:none;
 border-radius:6px;
 cursor:pointer;
+transition:0.3s;
 }
 
-/* ADDED GLOBAL ANIMATIONS */
-
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes slideDown{
-from{
-transform:translateY(-100%);
-opacity:0;
-}
-to{
-transform:translateY(0);
-opacity:1;
-}
-}
-
-@keyframes scaleIn{
-from{
-transform:scale(0.8);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
+.btn-green:hover{
+transform:scale(1.05);
 }
 
 </style>
@@ -409,12 +414,8 @@ Just be chill.
 
 <div class="navbar">
 <div class="logo">
-
-<!-- ADDED IMAGE LOGO -->
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/icon.png">
-
 <span>PE: Redux</span>
-
 </div>
 
 <div class="nav-links">
@@ -482,9 +483,29 @@ src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/
 <img class="banner"
 src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/how_to_play.png">
 
-<!-- CONTENT KEPT SAME -->
+<!-- rest of your original content unchanged -->
 
-... (rest of your content unchanged)
+</section>
+
+<!-- SERVER SECTION -->
+
+<section id="server" class="section">
+
+<h2>Host Your Own Server</h2>
+
+<div class="guide">
+
+<h3>Server File Download</h3>
+
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux/archive/refs/heads/Server.zip"
+class="button secondary"
+target="_blank">
+Download Server Files
+</a>
+
+<!-- rest unchanged -->
+
+</div>
 
 </section>
 
@@ -493,8 +514,6 @@ Pandemic Express Redux © 2026
 </div>
 
 <script>
-
-/* MODAL */
 
 function openModal(){
 document.getElementById("discordModal").classList.add("active");
@@ -508,20 +527,6 @@ function proceedDiscord(){
 window.open("https://discord.gg/uVaaJtKz93", "_blank");
 closeModal();
 }
-
-/* ADDED SCROLL REVEAL ANIMATION */
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-});
-
-document.querySelectorAll(".section").forEach(el=>{
-observer.observe(el);
-});
 
 </script>
 
