@@ -38,18 +38,15 @@ html, body{
     justify-content:space-between;
     align-items:center;
     z-index:999;
-    transition:0.3s;
 }
 
 .logo{
     font-weight:bold;
     font-size:20px;
-    letter-spacing:1px;
 }
 
 .nav-links{
     display:flex;
-    align-items:center;
     gap:20px;
 }
 
@@ -63,7 +60,6 @@ html, body{
 
 .nav-links a:hover{
     color:#00ffa6;
-    opacity:1;
 }
 
 /* HERO */
@@ -72,7 +68,7 @@ html, body{
     height:100vh;
     background:
     linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.95)),
-    url("https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/infographic.webp");
+    url("https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/infographic.png");
     background-size:cover;
     background-position:center;
     display:flex;
@@ -87,13 +83,14 @@ html, body{
 
 .hero h1{
     font-size:64px;
-    margin-bottom:10px;
 }
 
 .hero p{
     font-size:19px;
     opacity:0.9;
 }
+
+/* BUTTON */
 
 .button{
     display:inline-block;
@@ -119,7 +116,6 @@ html, body{
 
 .button.secondary:hover{
     background:#2a3440;
-    transform:scale(1.05);
 }
 
 /* SECTION */
@@ -130,7 +126,6 @@ html, body{
 
 .section h2{
     font-size:38px;
-    margin-bottom:10px;
 }
 
 .section p{
@@ -144,7 +139,7 @@ html, body{
 .banner{
     width:100%;
     border-radius:12px;
-    margin-top:25px;
+    margin-bottom:25px;
 }
 
 /* FEATURES */
@@ -164,8 +159,7 @@ html, body{
 }
 
 .feature-box:hover{
-    transform:translateY(-6px);
-    background:#151c25;
+    transform:translateY(-5px);
 }
 
 /* DOWNLOAD */
@@ -174,7 +168,6 @@ html, body{
     background:#11161d;
     padding:30px;
     border-radius:12px;
-    margin-top:20px;
 }
 
 /* FOOTER */
@@ -243,7 +236,6 @@ html, body{
 
 <p>
 A fast-paced zombie escape movement shooter where survival, skill, and teamwork decide your fate.
-Explore, loot, escape — or infect and hunt everyone down.
 </p>
 
 <a href="https://drive.google.com/uc?export=download&id=12T9inx7Qy_0OUjDakj8WBzvsn6Vsi2ZE"
@@ -262,29 +254,29 @@ Download Launcher v1.5.0
 <h2>About The Project</h2>
 
 <p>
-Pandemic Express: Redux is a fully rebuilt, community-driven revival of the original Pandemic Express. The project features rebuilt server infrastructure, a custom authentication system, major gameplay improvements, bug fixes, and frequent content updates. With over 25+ patches delivered in 2025 alone, the game continues to grow with new features, locations, balance changes, and quality-of-life improvements.
+Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
 </p>
 
 <div class="features">
 
 <div class="feature-box">
 <h3>Community Driven</h3>
-<p>Actively developed and maintained by passionate players.</p>
+<p>Maintained by passionate players.</p>
 </div>
 
 <div class="feature-box">
 <h3>Frequent Updates</h3>
-<p>Constant patches, improvements, and new content.</p>
+<p>25+ patches delivered.</p>
 </div>
 
 <div class="feature-box">
 <h3>Custom Backend</h3>
-<p>Rebuilt servers, authentication, and infrastructure.</p>
+<p>New infrastructure and systems.</p>
 </div>
 
 <div class="feature-box">
 <h3>24/7 Servers</h3>
-<p>Always online and ready to play anytime.</p>
+<p>Always online.</p>
 </div>
 
 </div>
@@ -297,10 +289,6 @@ Pandemic Express: Redux is a fully rebuilt, community-driven revival of the orig
 
 <h2>Development Roadmap</h2>
 
-<p>
-The roadmap shows the current development progress, completed features, and upcoming content planned for future updates.
-</p>
-
 <img class="banner"
 src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
 
@@ -312,58 +300,50 @@ src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadm
 
 <h2>How To Play</h2>
 
+<img class="banner"
+src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
+
 <p>
-Every match begins with all players starting as humans, except for one randomly selected player who becomes the initial zombie.
-The humans must explore the map, search buildings, and loot weapons, equipment, and supplies to defend themselves.
+Players start as humans, with one randomly selected as the first zombie. Humans must explore the map, loot weapons, and survive long enough to escape using the train.
 </p>
 
 <p>
-The main objective for humans is to survive and reach the escape train before time runs out. Once the train arrives, humans must board it to escape and win the round. However, zombies will attempt to infect every remaining human before they can escape.
+When infected, humans turn into zombies and must hunt the remaining survivors. The zombie team grows stronger as more players get infected.
 </p>
 
 <p>
-When a human is killed or infected by a zombie, they respawn as a zombie and join the infected team. This causes the zombie team to grow stronger as the match progresses, increasing pressure on the remaining survivors.
+Humans can unlock costumes using stars earned from playing or winning matches. Some costumes provide useful perks.
 </p>
 
-<p>
-Humans can unlock and wear unique costumes using stars. Stars can be earned by winning matches or simply playing the game. Some costumes provide special perks and bonuses, allowing players to customize their playstyle and improve survival chances.
-</p>
-
-<p>
-Zombies can choose between different zombie types, each with unique abilities:
-</p>
+<p>Zombies can choose special types:</p>
 
 <div class="features">
 
 <div class="feature-box">
 <h3>Bomber</h3>
-<p>Can explode to deal massive area damage to humans.</p>
+<p>Explodes and deals massive damage.</p>
 </div>
 
 <div class="feature-box">
 <h3>Catcher</h3>
-<p>A balanced zombie with high damage and reliable combat ability.</p>
+<p>High damage and balanced.</p>
 </div>
 
 <div class="feature-box">
 <h3>Mimic</h3>
-<p>Can disguise itself as a human to trick and ambush survivors.</p>
+<p>Disguises as humans.</p>
 </div>
 
 <div class="feature-box">
 <h3>Phantom</h3>
-<p>Can turn invisible temporarily to sneak up on humans.</p>
+<p>Can turn invisible temporarily.</p>
 </div>
 
 </div>
 
 <p>
-Humans win by successfully escaping on the train. Zombies win by infecting every human before escape.
-Each round is fast-paced, intense, and different every time depending on player actions and strategy.
+Humans win by escaping. Zombies win by infecting everyone.
 </p>
-
-<img class="banner"
-src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
 
 </section>
 
@@ -387,20 +367,6 @@ class="button secondary">
 Manual Install (Github)
 </a>
 
-<br><br>
-
-<a href="https://discord.gg/uVaaJtKz93"
-class="button secondary">
-Join Discord Server
-</a>
-
-<br><br>
-
-<a href="https://www.youtube.com/@PE-Redux"
-class="button secondary">
-YouTube Channel
-</a>
-
 </div>
 
 </section>
@@ -408,7 +374,7 @@ YouTube Channel
 <!-- FOOTER -->
 
 <div class="footer">
-Pandemic Express Redux © 2026 — Community Driven Project
+Pandemic Express Redux © 2026
 </div>
 
 <script>
@@ -418,7 +384,6 @@ function reveal(){
 let elements=document.querySelectorAll(".reveal");
 
 elements.forEach(el=>{
-
 let top=el.getBoundingClientRect().top;
 
 if(top < window.innerHeight-100){
