@@ -157,13 +157,14 @@ transform:scale(1);
 }
 }
 
-@keyframes typewriter{
-from{width:0;}
-to{width:100%;}
+@keyframes pulse{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.05);}
 }
 
-@keyframes blink{
-50%{border-color:transparent;}
+@keyframes glow{
+0%,100%{box-shadow:0 0 20px rgba(0,255,166,0.3);}
+50%{box-shadow:0 0 40px rgba(0,255,166,0.6);}
 }
 
 /* NAVBAR */
@@ -196,8 +197,10 @@ transform:translateY(0);
 
 .logo-img{
 height:40px;
-width:auto;
-animation:float 3s ease-in-out infinite;
+width:40px;
+border-radius:50%;
+object-fit:cover;
+animation:float 3s ease-in-out infinite, glow 3s ease-in-out infinite;
 }
 
 .nav-links{
@@ -556,7 +559,7 @@ opacity:1;
 transform:rotate(0) scale(1);
 }
 
-/* STAGGER DELAYS FOR SCROLL ANIMATIONS */
+/* STAGGER DELAYS */
 
 .stagger-1{transition-delay:0.1s;}
 .stagger-2{transition-delay:0.2s;}
@@ -567,7 +570,7 @@ transform:rotate(0) scale(1);
 .stagger-7{transition-delay:0.7s;}
 .stagger-8{transition-delay:0.8s;}
 
-/* PARALLAX EFFECT */
+/* PARALLAX */
 
 .parallax{
 background-attachment:fixed;
@@ -595,7 +598,7 @@ width:0%;
 transition:width 0.1s ease;
 }
 
-/* SCROLL TO TOP BUTTON */
+/* SCROLL TO TOP */
 
 .scroll-top{
 position:fixed;
@@ -660,7 +663,9 @@ text-align:center;
 
 .loading-logo{
 width:100px;
-height:auto;
+height:100px;
+border-radius:50%;
+object-fit:cover;
 animation:float 2s ease-in-out infinite;
 }
 
@@ -718,7 +723,7 @@ transition:transform 0.3s ease;
 transform:scale(1.05);
 }
 
-/* CARD EFFECTS */
+/* CARD */
 
 .card{
 background:#11161d;
@@ -741,32 +746,47 @@ background:linear-gradient(135deg, #00ffa6, #00cc85);
 background-clip:text;
 }
 
-.text-shadow{
-text-shadow:0 5px 20px rgba(0,255,166,0.3);
+/* CREDITS SECTION */
+
+.credits-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:30px;
 }
 
-/* BORDER ANIMATIONS */
-
-.border-glow{
-position:relative;
+.credit-item{
+background:#11161d;
+border-radius:12px;
+padding:20px;
+text-align:center;
+transition:all 0.3s ease;
+animation:scaleIn 0.6s ease backwards;
 }
 
-.border-glow::before{
-content:"";
-position:absolute;
-top:-2px;
-left:-2px;
-right:-2px;
-bottom:-2px;
-background:linear-gradient(45deg, #00ffa6, transparent, #00ffa6);
-border-radius:14px;
-z-index:-1;
-opacity:0;
-transition:opacity 0.3s ease;
+.credit-item:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-.border-glow:hover::before{
-opacity:1;
+.credit-item:nth-child(1){animation-delay:0.1s;}
+.credit-item:nth-child(2){animation-delay:0.2s;}
+.credit-item:nth-child(3){animation-delay:0.3s;}
+
+.credit-item img{
+width:100%;
+border-radius:8px;
+transition:transform 0.3s ease;
+}
+
+.credit-item:hover img{
+transform:scale(1.05);
+}
+
+.credit-item h3{
+color:#00ffa6;
+margin-bottom:15px;
+font-size:20px;
 }
 
 /* RESPONSIVE */
@@ -790,6 +810,10 @@ font-size:14px;
 
 .scroll-animate, .scroll-animate-left, .scroll-animate-right{
 transform:translateY(30px);
+}
+
+.credits-grid{
+grid-template-columns:1fr;
 }
 }
 
@@ -854,6 +878,7 @@ Just be chill.
 <a href="#roadmap">Roadmap</a>
 <a href="#play">How To Play</a>
 <a href="#server">Host Server</a>
+<a href="#credits">Credits</a>
 <a onclick="openModal()">Discord</a>
 <a href="https://www.youtube.com/@PE-Redux" target="_blank">YouTube</a>
 </div>
@@ -1076,6 +1101,33 @@ Download Parkour Map
 
 </section>
 
+<!-- CREDITS SECTION -->
+
+<section id="credits" class="section">
+
+<h2 class="text-gradient scroll-animate">Credits</h2>
+
+<div class="credits-grid">
+
+<div class="credit-item scroll-animate stagger-1">
+<h3>Admins</h3>
+<img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Admins.png" alt="Admins">
+</div>
+
+<div class="credit-item scroll-animate stagger-2">
+<h3>Contributors</h3>
+<img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Contributors.png" alt="Contributors">
+</div>
+
+<div class="credit-item scroll-animate stagger-3">
+<h3>Modders</h3>
+<img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Modders.png" alt="Modders">
+</div>
+
+</div>
+
+</section>
+
 <div class="footer scroll-animate">
 Pandemic Express Redux © 2026
 </div>
@@ -1257,7 +1309,7 @@ ripples.remove();
 });
 });
 
-// RIPPLE ANIMATION KEYFRAMES (added dynamically)
+// RIPPLE ANIMATION KEYFRAMES
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes ripple {
