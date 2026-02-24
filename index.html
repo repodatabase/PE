@@ -11,200 +11,201 @@
 /* RESET */
 
 *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
 html, body{
-    margin:0;
-    padding:0;
-    font-family:"Avenir Next", Avenir, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background:#0b0f14;
-    color:white;
-    overflow-x:hidden;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+font-family:"Avenir Next", Avenir, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+background:#0b0f14;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 /* NAVBAR */
 
 .navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:rgba(10,15,20,0.95);
-    backdrop-filter:blur(12px);
-    padding:15px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:999;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(10,15,20,0.95);
+backdrop-filter:blur(12px);
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
 }
 
 .logo{
-    font-weight:bold;
-    font-size:20px;
+font-weight:bold;
+font-size:20px;
 }
 
 .nav-links{
-    display:flex;
-    gap:20px;
+display:flex;
+gap:20px;
 }
 
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    opacity:0.85;
-    transition:0.25s;
+color:white;
+text-decoration:none;
+font-size:15px;
+opacity:0.85;
+transition:0.25s;
 }
 
 .nav-links a:hover{
-    color:#00ffa6;
+color:#00ffa6;
 }
 
 /* HERO */
 
 .hero{
-    height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.95)),
-    url("https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/infographic.png");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    padding:0 60px;
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.95)),
+url("https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/infographic.png");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 60px;
 }
 
 .hero-content{
-    max-width:650px;
-    animation:fadeUp 1s ease;
+max-width:650px;
+animation:fadeUp 1s ease;
 }
 
 .hero h1{
-    font-size:64px;
+font-size:64px;
 }
 
 .hero p{
-    font-size:19px;
-    opacity:0.9;
+font-size:19px;
+opacity:0.9;
 }
 
 /* BUTTON */
 
 .button{
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 30px;
-    background:#00ffa6;
-    color:black;
-    font-weight:bold;
-    border-radius:8px;
-    text-decoration:none;
-    transition:0.25s;
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+background:#00ffa6;
+color:black;
+font-weight:bold;
+border-radius:8px;
+text-decoration:none;
+transition:0.25s;
 }
 
 .button:hover{
-    background:#00cc85;
-    transform:scale(1.05);
+background:#00cc85;
+transform:scale(1.05);
 }
 
 .button.secondary{
-    background:#1a222c;
-    color:white;
+background:#1a222c;
+color:white;
+margin-left:10px;
 }
 
 .button.secondary:hover{
-    background:#2a3440;
+background:#2a3440;
 }
 
 /* SECTION */
 
 .section{
-    padding:90px 60px;
+padding:90px 60px;
 }
 
 .section h2{
-    font-size:38px;
+font-size:38px;
+margin-bottom:15px;
 }
 
 .section p{
-    max-width:900px;
-    opacity:0.9;
-    line-height:1.7;
+max-width:900px;
+opacity:0.9;
+line-height:1.7;
 }
 
 /* IMAGE */
 
 .banner{
-    width:100%;
-    border-radius:12px;
-    margin-bottom:25px;
+width:100%;
+border-radius:12px;
+margin-bottom:25px;
 }
 
 /* FEATURES */
 
 .features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-    margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
 .feature-box{
-    background:#11161d;
-    padding:25px;
-    border-radius:12px;
-    transition:0.3s;
+background:#11161d;
+padding:25px;
+border-radius:12px;
 }
 
-.feature-box:hover{
-    transform:translateY(-5px);
+/* SERVER GUIDE */
+
+.guide{
+background:#11161d;
+padding:30px;
+border-radius:12px;
+line-height:1.8;
 }
 
-/* DOWNLOAD */
-
-.download-box{
-    background:#11161d;
-    padding:30px;
-    border-radius:12px;
+.guide code{
+display:block;
+background:#0a0f14;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-wrap;
+color:#00ffa6;
 }
 
 /* FOOTER */
 
 .footer{
-    padding:40px;
-    text-align:center;
-    background:#070a0f;
-    opacity:0.6;
+padding:40px;
+text-align:center;
+background:#070a0f;
+opacity:0.6;
 }
 
 /* ANIMATION */
 
 .reveal{
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.9s;
+opacity:0;
+transform:translateY(40px);
+transition:0.9s;
 }
 
 .reveal.active{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 @keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 </style>
-
 </head>
 
 <body>
@@ -219,7 +220,7 @@ html, body{
 <a href="#about">About</a>
 <a href="#roadmap">Roadmap</a>
 <a href="#play">How To Play</a>
-<a href="#download">Download</a>
+<a href="#server">Host Server</a>
 <a href="https://discord.gg/uVaaJtKz93">Discord</a>
 <a href="https://www.youtube.com/@PE-Redux">YouTube</a>
 </div>
@@ -238,9 +239,16 @@ html, body{
 A fast-paced zombie escape movement shooter where survival, skill, and teamwork decide your fate.
 </p>
 
-<a href="https://drive.google.com/uc?export=download&id=12T9inx7Qy_0OUjDakj8WBzvsn6Vsi2ZE"
+<a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe"
 class="button">
 Download Launcher v1.5.0
+</a>
+
+<br>
+
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux"
+class="button secondary">
+GitHub
 </a>
 
 </div>
@@ -256,30 +264,6 @@ Download Launcher v1.5.0
 <p>
 Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
 </p>
-
-<div class="features">
-
-<div class="feature-box">
-<h3>Community Driven</h3>
-<p>Maintained by passionate players.</p>
-</div>
-
-<div class="feature-box">
-<h3>Frequent Updates</h3>
-<p>25+ patches delivered.</p>
-</div>
-
-<div class="feature-box">
-<h3>Custom Backend</h3>
-<p>New infrastructure and systems.</p>
-</div>
-
-<div class="feature-box">
-<h3>24/7 Servers</h3>
-<p>Always online.</p>
-</div>
-
-</div>
 
 </section>
 
@@ -304,67 +288,75 @@ src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadm
 src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
 
 <p>
-Players start as humans, with one randomly selected as the first zombie. Humans must explore the map, loot weapons, and survive long enough to escape using the train.
+Players start as humans, with one randomly selected as the first zombie. Humans must explore, loot weapons, and escape using the train.
 </p>
 
 <p>
-When infected, humans turn into zombies and must hunt the remaining survivors. The zombie team grows stronger as more players get infected.
+When infected, humans turn into zombies and hunt survivors.
 </p>
 
 <p>
-Humans can unlock costumes using stars earned from playing or winning matches. Some costumes provide useful perks.
+Humans earn stars to unlock costumes and perks.
 </p>
 
-<p>Zombies can choose special types:</p>
-
-<div class="features">
-
-<div class="feature-box">
-<h3>Bomber</h3>
-<p>Explodes and deals massive damage.</p>
-</div>
-
-<div class="feature-box">
-<h3>Catcher</h3>
-<p>High damage and balanced.</p>
-</div>
-
-<div class="feature-box">
-<h3>Mimic</h3>
-<p>Disguises as humans.</p>
-</div>
-
-<div class="feature-box">
-<h3>Phantom</h3>
-<p>Can turn invisible temporarily.</p>
-</div>
-
-</div>
-
 <p>
-Humans win by escaping. Zombies win by infecting everyone.
+Zombie classes include Bomber, Catcher, Mimic, and Phantom, each with unique abilities.
 </p>
 
 </section>
 
-<!-- DOWNLOAD -->
+<!-- SERVER HOSTING -->
 
-<section id="download" class="section reveal">
+<section id="server" class="section reveal">
 
-<h2>Download</h2>
+<h2>Host Your Own Server</h2>
 
-<div class="download-box">
+<div class="guide">
 
-<a href="https://drive.google.com/uc?export=download&id=12T9inx7Qy_0OUjDakj8WBzvsn6Vsi2ZE"
-class="button">
-Download Launcher (Recommended)
-</a>
+<h3>Prerequisites</h3>
 
-<br><br>
+• NAT Loopback router recommended  
+• Port forwarding capable router  
+• Server client from GitHub  
 
-<a href="https://github.com/Kornflakes1/PandemicExpressRedux"
-class="button secondary">
-Manual Install (Github)
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux/tree/Server" class="button secondary">Download Server Client</a>
+
+<h3>Ports To Forward</h3>
+
+<code>
+Game Connection: 2838
+Server Arbitrator: 2840, 2841, 2842, 2843
+Voice Chat: 2832
+Sync Server: 2932
+</code>
+
+<h3>Router Gateway</h3>
+
+<code>
+192.168.1.1
+192.168.0.1
+192.168.1.254
+</code>
+
+<h3>Configuration</h3>
+
+<code>
+Edit dedicated.cfg for server name and settings
+Edit serverx.cfg for balancing
+</code>
+
+<h3>Testing Server</h3>
+
+<code>
+Launch server
+Check server list
+Connect
+</code>
+
+<h3>Custom Maps</h3>
+
+<a href="https://github.com/PEPSIKrus/parkour-map/releases" class="button secondary">
+Download Parkour Map
 </a>
 
 </div>
@@ -384,6 +376,7 @@ function reveal(){
 let elements=document.querySelectorAll(".reveal");
 
 elements.forEach(el=>{
+
 let top=el.getBoundingClientRect().top;
 
 if(top < window.innerHeight-100){
