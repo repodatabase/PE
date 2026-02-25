@@ -6,8 +6,6 @@
 <title>Pandemic Express: Redux</title>
 <style>
 /* RESET */
-
-
 *{
 box-sizing:border-box;
 }
@@ -448,7 +446,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 .perk-default{background:#2a2a2a;}
 .perk-doubt{background:#4d4d1f;}
 .perk-lover{background:#4d1f3d;}
-.perk-safety{background:#1f4d2b;}
+.perk-safety{background:#1f4d2a;}
 .perk-vanity{background:#4d1f1f;}
 .perk-leader{background:#1f2f4d;}
 .perk-hope{background:#4d3a1f;}
@@ -904,8 +902,6 @@ transform:scale(1.05);
 
 .credit-item h3{
 color:#00ffa6;
-margin.credit-item h3{
-color:#00ffa6;
 margin-bottom:15px;
 font-size:20px;
 }
@@ -1012,8 +1008,10 @@ class="button secondary hover-scale"
 target="_blank">
 GitHub
 </a>
+<br>
 <a onclick="openModal()"
-class="button secondary hover-scale">
+class="button secondary hover-scale"
+style="cursor:pointer;">
 Discord
 </a>
 </div>
@@ -1093,7 +1091,6 @@ Move faster and camouflage while crouching/sliding.
 <div class="info-box perk-hope hover-lift scroll-animate stagger-8">
 Hopeful  
 Regenerate health and revive zombies into humans. 2 uses per round.
-</div>
 </div>
 </div>
 </section>
@@ -1177,8 +1174,6 @@ setTimeout(function(){
 document.getElementById('loadingScreen').classList.add('hidden');
 }, 2500);
 });
-
-
 // SCROLL ANIMATIONS
 const scrollElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale, .scroll-animate-blur, .scroll-animate-rotate');
 
